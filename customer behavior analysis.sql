@@ -17,7 +17,7 @@ WHERE discount_applied = 'Yes' and purchase_amount >= (SELECT AVG (purchase_amou
 
 --  Which are the top 5 products with the highest average review rating?
 SELECT item_purchased, ROUND(AVG(review_rating),2) AS "Average Product Rating"
-FROM cuStomer
+FROM customer
 GROUP BY item_purchased
 ORDER BY AVG (review_rating) DESC
 LIMIT 5;
